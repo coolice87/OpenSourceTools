@@ -1,0 +1,3 @@
+
+将相应pid进程的跟踪情况输出到文件中
+strace -aef -p pid -o file
