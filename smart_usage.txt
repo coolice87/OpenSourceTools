@@ -1,0 +1,237 @@
+smartctl 6.2 2013-07-26 r3841 [armv7l-linux-3.0.8] (local build)
+Copyright (C) 2002-13, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Model Family:     Western Digital AV-GP (AF)
+Device Model:     WDC WD10EURX-73C57Y0
+Serial Number:    WD-WCC4J0336158
+LU WWN Device Id: 5 0014ee 2b3825b79
+Firmware Version: 01.01A01
+User Capacity:    1,000,204,886,016 bytes [1.00 TB]
+Sector Sizes:     512 bytes logical, 4096 bytes physical
+Rotation Rate:    5400 rpm
+Device is:        In smartctl database [for details use: -P show]
+ATA Version is:   ACS-2 (minor revision not indicated)
+SATA Version is:  SATA 3.0, 6.0 Gb/s (current: 3.0 Gb/s)
+Local Time is:    Tue Mar 11 16:57:54 2014 UTC
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x00)	Offline data collection activity
+					was never started.
+					Auto Offline Data Collection: Disabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		(13140) seconds.
+Offline data collection
+capabilities: 			 (0x7b) SMART execute Offline immediate.
+					Auto Offline data collection on/off support.
+					Suspend Offline collection upon new
+					command.
+					Offline surface scan supported.
+					Self-test supported.
+					Conveyance Self-test supported.
+					Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   2) minutes.
+Extended self-test routine
+recommended polling time: 	 ( 149) minutes.
+Conveyance self-test routine
+recommended polling time: 	 (   5) minutes.
+SCT capabilities: 	       (0x3035)	SCT Status supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+------------------------------------------------第一种情况没有错误日志 --------------------------
+SMART Attributes Data Structure revision number: 10
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_FAILED RAW_VALUE
+  1 Raw_Read_Error_Rate     0x000f   106   099   006    Pre-fail  Always       -       10594752
+  3 Spin_Up_Time            0x0003   099   099   000    Pre-fail  Always       -       0
+  4 Start_Stop_Count        0x0032   100   100   020    Old_age   Always       -       4
+  5 Reallocated_Sector_Ct   0x0033   100   100   010    Pre-fail  Always       -       0
+  7 Seek_Error_Rate         0x000f   100   253   030    Pre-fail  Always       -       219589
+  9 Power_On_Hours          0x0032   100   100   000    Old_age   Always       -       27
+ 10 Spin_Retry_Count        0x0013   100   100   097    Pre-fail  Always       -       0
+ 12 Power_Cycle_Count       0x0032   100   100   020    Old_age   Always       -       2
+183 Runtime_Bad_Block       0x0032   100   100   000    Old_age   Always       -       0
+184 End-to-End_Error        0x0032   100   100   099    Old_age   Always       -       0
+187 Reported_Uncorrect      0x0032   100   100   000    Old_age   Always       -       0
+188 Command_Timeout         0x0032   100   100   000    Old_age   Always       -       0 0 0
+189 High_Fly_Writes         0x003a   100   100   000    Old_age   Always       -       0
+190 Airflow_Temperature_Cel 0x0022   056   050   045    Old_age   Always       -       44 (Min/Max 16/50)
+191 G-Sense_Error_Rate      0x0032   100   100   000    Old_age   Always       -       0
+192 Power-Off_Retract_Count 0x0032   100   100   000    Old_age   Always       -       2
+193 Load_Cycle_Count        0x0032   100   100   000    Old_age   Always       -       4
+194 Temperature_Celsius     0x0022   044   050   000    Old_age   Always       -       44 (0 16 0 0 0)
+197 Current_Pending_Sector  0x0012   100   100   000    Old_age   Always       -       0
+198 Offline_Uncorrectable   0x0010   100   100   000    Old_age   Offline      -       0
+199 UDMA_CRC_Error_Count    0x003e   200   200   000    Old_age   Always       -       0
+240 Head_Flying_Hours       0x0000   100   253   000    Old_age   Offline      -       27h+05m+53.346s
+241 Total_LBAs_Written      0x0000   100   253   000    Old_age   Offline      -       90322384
+242 Total_LBAs_Read         0x0000   100   253   000    Old_age   Offline      -       1930609
+
+SMART Error Log Version: 1
+No Errors Logged
+
+
+------------------------------------------ 第二中情况 有硬盘错误日志--------------------------------------------------
+SMART Attributes Data Structure revision number: 16
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_FAILED RAW_VALUE
+  1 Raw_Read_Error_Rate     0x002f   200   200   051    Pre-fail  Always       -       28
+  3 Spin_Up_Time            0x0027   130   128   021    Pre-fail  Always       -       4458
+  4 Start_Stop_Count        0x0032   100   100   000    Old_age   Always       -       18
+  5 Reallocated_Sector_Ct   0x0033   142   142   140    Pre-fail  Always       -       2478
+  7 Seek_Error_Rate         0x002e   195   180   000    Old_age   Always       -       1694
+  9 Power_On_Hours          0x0032   098   098   000    Old_age   Always       -       1788
+ 10 Spin_Retry_Count        0x0032   100   253   000    Old_age   Always       -       0
+ 11 Calibration_Retry_Count 0x0032   100   253   000    Old_age   Always       -       0
+ 12 Power_Cycle_Count       0x0032   100   100   000    Old_age   Always       -       12
+192 Power-Off_Retract_Count 0x0032   200   200   000    Old_age   Always       -       10
+193 Load_Cycle_Count        0x0032   200   200   000    Old_age   Always       -       7
+194 Temperature_Celsius     0x0022   109   099   000    Old_age   Always       -       34
+196 Reallocated_Event_Count 0x0032   074   074   000    Old_age   Always       -       126
+197 Current_Pending_Sector  0x0032   200   200   000    Old_age   Always       -       2
+198 Offline_Uncorrectable   0x0030   100   253   000    Old_age   Offline      -       0
+199 UDMA_CRC_Error_Count    0x0032   200   200   000    Old_age   Always       -       0
+200 Multi_Zone_Error_Rate   0x0008   100   253   000    Old_age   Offline      -       0
+
+SMART Error Log Version: 1
+ATA Error Count: 3399 (device log contains only the most recent five errors)
+	CR = Command Register [HEX]
+	FR = Features Register [HEX]
+	SC = Sector Count Register [HEX]
+	SN = Sector Number Register [HEX]
+	CL = Cylinder Low Register [HEX]
+	CH = Cylinder High Register [HEX]
+	DH = Device/Head Register [HEX]
+	DC = Device Command Register [HEX]
+	ER = Error register [HEX]
+	ST = Status register [HEX]
+Powered_Up_Time is measured from power on, and printed as
+DDd+hh:mm:SS.sss where DD=days, hh=hours, mm=minutes,
+SS=sec, and sss=millisec. It "wraps" after 49.710 days.
+
+Error 3399 occurred at disk power-on lifetime: 1788 hours (74 days + 12 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  04 61 46 00 00 00 a0  Device Fault; Error: ABRT
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  ef 03 46 00 00 00 a0 08  44d+03:37:47.113  SET FEATURES [Set transfer mode]
+  ec 00 00 00 00 00 a0 08  44d+03:37:47.113  IDENTIFY DEVICE
+  c8 00 08 10 20 01 e0 08  44d+03:37:47.113  READ DMA
+  ec 00 00 00 00 00 a0 08  44d+03:37:47.112  IDENTIFY DEVICE
+  ef 03 46 00 00 00 a0 08  44d+03:37:47.112  SET FEATURES [Set transfer mode]
+
+Error 3398 occurred at disk power-on lifetime: 1788 hours (74 days + 12 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  04 61 08 10 20 01 e0  Device Fault; Error: ABRT 8 sectors at LBA = 0x00012010 = 73744
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  c8 00 08 10 20 01 e0 08  44d+03:37:47.113  READ DMA
+  ec 00 00 00 00 00 a0 08  44d+03:37:47.112  IDENTIFY DEVICE
+  ef 03 46 00 00 00 a0 08  44d+03:37:47.112  SET FEATURES [Set transfer mode]
+  ec 00 00 00 00 00 a0 08  44d+03:37:47.112  IDENTIFY DEVICE
+  c8 00 08 10 20 01 e0 08  44d+03:37:47.111  READ DMA
+
+Error 3397 occurred at disk power-on lifetime: 1788 hours (74 days + 12 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  04 61 46 00 00 00 a0  Device Fault; Error: ABRT
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  ef 03 46 00 00 00 a0 08  44d+03:37:47.112  SET FEATURES [Set transfer mode]
+  ec 00 00 00 00 00 a0 08  44d+03:37:47.112  IDENTIFY DEVICE
+  c8 00 08 10 20 01 e0 08  44d+03:37:47.111  READ DMA
+  ec 00 00 00 00 00 a0 08  44d+03:37:47.111  IDENTIFY DEVICE
+  ef 03 46 00 00 00 a0 08  44d+03:37:47.111  SET FEATURES [Set transfer mode]
+
+Error 3396 occurred at disk power-on lifetime: 1788 hours (74 days + 12 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  04 61 08 10 20 01 e0  Device Fault; Error: ABRT 8 sectors at LBA = 0x00012010 = 73744
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  c8 00 08 10 20 01 e0 08  44d+03:37:47.111  READ DMA
+  ec 00 00 00 00 00 a0 08  44d+03:37:47.111  IDENTIFY DEVICE
+  ef 03 46 00 00 00 a0 08  44d+03:37:47.111  SET FEATURES [Set transfer mode]
+  ec 00 00 00 00 00 a0 08  44d+03:37:47.110  IDENTIFY DEVICE
+  c8 00 08 10 20 01 e0 08  44d+03:37:47.110  READ DMA
+
+Error 3395 occurred at disk power-on lifetime: 1788 hours (74 days + 12 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  04 61 46 00 00 00 a0  Device Fault; Error: ABRT
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  ef 03 46 00 00 00 a0 08  44d+03:37:47.111  SET FEATURES [Set transfer mode]
+  ec 00 00 00 00 00 a0 08  44d+03:37:47.110  IDENTIFY DEVICE
+  c8 00 08 10 20 01 e0 08  44d+03:37:47.110  READ DMA
+  ec 00 00 00 00 00 a0 08  44d+03:37:47.109  IDENTIFY DEVICE
+  ef 03 46 00 00 00 a0 08  44d+03:37:47.109  SET FEATURES [Set transfer mode]
+
+--------------------------------------- end ---------------------------------------------------
+
+Raw_Read_Error_Rate：读取硬盘时出现的硬件读取出错率，不同厂家不一样
+Reallocated_Sector_Ct：坏扇区被发现并且重新映射备用扇区，RAW_VALUE就是被映射扇区数
+Reallocated_Event_Count：重映射操作次数
+Spin_Retry_Count：硬盘第一次没转动，然后再次转动的次数，如果有升高说明机械故障或者供电原因
+Current_Pending_Sector：当前被怀疑有坏扇区等待重新off-line验证的数量，如果验证失败就重新映射扇区
+End-to-End_Error：传输数据的时候缓存里的数据和主控，硬盘无法相对应
+Command_Timeout：硬盘工作中出现超时，一般是电源或者数据线问题
+UDMA_CRC_Error_Count: 
+
+SMART Self-test log structure revision number 1
+No self-tests have been logged.  [To run self-tests, use: smartctl -t]
+
+
+SMART Selective self-test log data structure revision number 1
+ SPAN  MIN_LBA  MAX_LBA  CURRENT_TEST_STATUS
+    1        0        0  Not_testing
+    2        0        0  Not_testing
+    3        0        0  Not_testing
+    4        0        0  Not_testing
+    5        0        0  Not_testing
+Selective self-test flags (0x0):
+  After scanning selected spans, do NOT read-scan remainder of disk.
+If Selective self-test is pending on power-up, resume after 0 minute delay.
+
